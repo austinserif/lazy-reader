@@ -8,5 +8,4 @@ The purpose of this library is to provide light-weight methods for building enti
 Coming Soon!
 
 #### Tests
-For profile and article class tests, run ``
-
+For profile and article class tests, run `python3 -m unittest -v tests/test_article.py tests/test_profile.py` from directory root.

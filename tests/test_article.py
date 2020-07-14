@@ -11,8 +11,6 @@ class TestArticle(TestCase):
     def test_read(self):
         """test the Article.read() class method for correctly retrieving title and body text from an article"""
         article_obj = Article.read(self.test_url)
-        print(f"entities: {article_obj.get_ents(article_obj.body)}, ent types: {type(article_obj.get_ents(article_obj.body)['Trump'])}")
-
         self.assertIn("Trump trashes CDC", article_obj.title.text)
         self.assertIn("The move came as the Trump administration makes a concerted", article_obj.body.text)
 

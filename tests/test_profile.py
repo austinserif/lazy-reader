@@ -30,6 +30,5 @@ class TestProfile(TestCase):
     def test_new(self):
         """test the Profile.new() class method, should test whether a correct Profile instance is returned"""
         profile_obj = Profile.new('Donald Trump', self.ents['Trump'])
-        print(profile_obj.entity, profile_obj.entity_type)
         self.assertEqual("Donald Trump", profile_obj.entity)
         self.assertEqual("PERSON", profile_obj.entity_type)
