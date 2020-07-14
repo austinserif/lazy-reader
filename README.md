@@ -8,5 +8,5 @@ The purpose of this library is to provide light-weight methods for building enti
 Coming Soon!
 
 #### Tests
-To run tests for profile and article classes
+For profile and article class tests, run ``
 
