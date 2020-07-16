@@ -22,7 +22,7 @@ class TestProfile(TestCase):
         body = "".join([sentence.text for sentence in structured_data.find_all('div',{'class':'zn-body__paragraph'})])
 
         #nlp with spacy
-        nlp = spacy.load("en_core_web_sm")
+        nlp = spacy.load("en_core_web_lg")
         doc = nlp(body)
 
         cls.ents = {entity.text : entity.label_ for entity in doc.ents}

@@ -14,10 +14,18 @@ class TestArticle(TestCase):
         self.assertIn("Trump trashes CDC", article_obj.title.text)
         self.assertIn("The move came as the Trump administration makes a concerted", article_obj.body.text)
 
-    def test_article_test(self):
+    def test_article_text(self):
         """test the Article.article_test() class method"""
-        # TODO: Write Test
-        return
+        with open('/Users/austin/Desktop/lazy-reader/tests/sample_html.txt', 'r') as infile:
+            html = infile.read()
+        article_dict = Article.article_text(html)
+        self.assertIsInstance(article_dict, dict)
+        self.assertIn('title', article_dict)
+        self.assertIn('body', article_dict)
+        self.assertIn('The move came as the Trump administration makes a concerted', article_dict['body'])
+        self.assertIn('Trump trashes CDC', article_dict['title'])
+        self.assertIn("'\'", html)
+        self.assertNotIn("'/'", article_dict['body'])
 
     def test_get_nouns(self):
         """test the Article.get_nouns() method"""

@@ -26,10 +26,13 @@ class Article:
     @classmethod
     def article_text(cls, html: str) -> dict:
         """takes html string as an argument and returns the article content as plain text.
-        **NOTE** Current iteration of this method only supports parsing of HTML scraped from CNN, or other sites with same HTML tags."""
+        **NOTE** Current iteration of this method only supports parsing of HTML scraped 
+        from CNN, or other sites with same HTML tags."""
         structured_data = BeautifulSoup(html, 'html.parser')
         title = structured_data.find('h1').text
-        body = "".join([sentence.text for sentence in structured_data.find_all('div',{'class':'zn-body__paragraph'})])
+
+        #join list into string and remove escape characters ('/')
+        body = "".join([sentence.text for sentence in structured_data.find_all('div',{'class':'zn-body__paragraph'})]).replace("/", "")
         return {'title': title, 'body': body}
     
     def get_nouns(self, doc: spacy.tokens.doc.Doc) -> list:
