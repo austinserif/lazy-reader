@@ -41,3 +41,8 @@ class TestArticle(TestCase):
         """test the Article.get_ents() method"""
         # TODO: Write Test
         return
+    
+    def test_get_metadata(self):
+        """teset the Artile.get_metadata() method"""
+        # TODO: Write Test
+        return

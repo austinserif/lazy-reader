@@ -5,9 +5,10 @@ import spacy
 
 from bs4 import BeautifulSoup
 from nlp import textualize
+from metadata import Metadata
 
 class Article:
-    """Article Class, instantiated with two strings: the title and body of an article"""
+    """Article Class, instantiated with two strings: the title and body url of an article"""
     def __init__(self, title: str, body: str):
         self.title = textualize(title)
         self.body = textualize(body)
@@ -46,3 +47,8 @@ class Article:
     def get_ents(self, doc: spacy.tokens.doc.Doc) -> dict:
         """returns dict of {entity: entity_type} key/value pairs for passed Doc instance"""
         return {entity.text : entity.label_ for entity in doc.ents}
+    
+    def get_metadata(self) -> Metadata:
+        """returns Metadata object"""
+        # TODO: finish method
+        return
