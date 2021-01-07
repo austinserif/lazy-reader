@@ -15,7 +15,7 @@ html5lib==1.1
 idna==2.10
 isodate==0.6.0
 jsonschema==3.0.2
-lxml==4.5.2
+lxml==4.6.2
 mccabe==0.6.1
 mf2py==1.1.2
 mock==2.0.0
